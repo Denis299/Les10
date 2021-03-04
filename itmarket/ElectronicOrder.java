@@ -12,11 +12,14 @@ public class ElectronicOrder extends Order {
     @Override
     void validateOrder() {
         if (!(city4(chipFromCity) || city4(getChipToCity))) {
-            System.out.println("Валидация по городу невозможна");}
+            System.out.println("Валидация по городу невозможна");
+        }
         if (!(customerOwned.getGender().equals("Женский"))) {
-            System.out.println("Оформляем только женщинам!");}
+            System.out.println("Оформляем только женщинам!");
+        }
         if (basePrice < 100) {
-            System.out.println("Минимальный прайс заказа 100");}
+            System.out.println("Минимальный прайс заказа 100");
+        }
 
         return;
     }
@@ -31,13 +34,18 @@ public class ElectronicOrder extends Order {
     @Override
     void calculatePrice() {
         if ((getChipToCity == "Киев") || (getChipToCity == "Одесса")) {
-            totalPrice = basePrice * 0.10+sale(basePrice);
+            totalPrice = basePrice * 0.10 + sale(basePrice);
         } else {
-            totalPrice = basePrice * 0.15+sale(basePrice);
+            totalPrice = basePrice * 0.15 + sale(basePrice);
         }
         return;
     }
-    private double sale(int sum){
-     if (sum>1000){return (sum/1.05);};
-    return sum;}
+
+    private double sale(int sum) {
+        if (sum > 1000) {
+            return (sum / 1.05);
+        }
+        ;
+        return sum;
+    }
 }

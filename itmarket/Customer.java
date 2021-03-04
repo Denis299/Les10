@@ -1,9 +1,9 @@
 package Les10.itmarket;
 
 public class Customer {
- private    String name;
- private    String city;
- private    String gender;
+    private String name;
+    private String city;
+    private String gender;
 
     public String getName() {
         return name;
